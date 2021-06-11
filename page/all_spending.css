@@ -1,0 +1,15 @@
+body {
+}
+body > header {
+    text-align: center;
+}
+main {
+    align-items: center;
+}
+main > .category {
+    width: 50vw;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+}
