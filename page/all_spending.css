@@ -1,15 +1,56 @@
 body {
+    margin-left: 12vw;
+    margin-right: 12vw;
 }
 body > header {
-    text-align: center;
-}
-main {
+    margin-top: 1vh;
+    height: 8vh;
+    border-radius: 5px;
+    box-shadow: 2px 2px 7px 0px grey;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    text-align: center;
+    margin-bottom: 2vh;
 }
 main > .category {
-    width: 50vw;
-    background-color: aqua;
     display: flex;
-    justify-content: space-around;
-    align-self: center;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 15% 15% 15% 15%;
+    margin-bottom: 10vh;
+}
+main > .category > div {
+    height: 3vh;
+    background-color: #1F2A36;
+    color: white;
+    padding: 2vh;
+    border: 2px solid black;
+    box-shadow: 4px 4px 7px 0px grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#spending {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#department {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+main > article > h2 {
+    margin-bottom: 5vh;
+}
+main > .graph {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+main > .graph > figure > img {
+    height: 100%;
+    width: 80%;
+}
+main > .graph > article > h3 {
+    padding-bottom: 5vh;
 }
