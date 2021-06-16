@@ -29,8 +29,8 @@ main > .category {
     grid-template-columns: 16% 16% 16% 16%;
     margin-bottom: 10vh;
 }
-main > .category > div {
-    height: 2.5vh;
+main > .category > button {
+    height: 90%;
     background-color: #1F2A36;
     color: white;
     padding: 10%;
@@ -41,43 +41,49 @@ main > .category > div {
     align-items: center;
     font-size: 14px;
     font-weight:300;
+    cursor: pointer;
 }
-#spending {
+#b_spending {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    background-color: #667882;
-    box-shadow: inset 3px 2px 15px #1F2A36;
 }
-#types:hover {
+#b_spending:hover {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     transition: all .2s ease-in-out; 
     transform: scale(0.9);
     box-shadow: unset;
 }
-#changes:hover {
+#b_types:hover {
+    transition: all .2s ease-in-out; 
+    transform: scale(0.9);
+    box-shadow: unset;
+}
+#b_changes:hover {
     transition: all .2s ease-in; 
     transform: scale(0.9);
 }
-#department {
+#b_department {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-#department:hover {
+#b_department:hover {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     transition: all .2s ease-in-out; 
     transform: scale(0.9);
     box-shadow: unset;
 }
-main > article > h2 {
+h2 {
     margin-bottom: 5vh;
     font-size: 1.2rem;
     font-weight:400;
 }
-main > .graph {
+.infos {
     display: grid;
     grid-template-columns: 65% 35%;
 }
-main > .graph > figure > img {
+.infos > figure > img {
     height: 100%;
     width: 80%;
 }
@@ -85,12 +91,105 @@ figcaption {
     font-weight: 300;
     font-size: 0.6rem;
 }
-main > .graph > article > h3 {
+.infos > article > h3 {
     padding-bottom: 5vh;
     font-size: 1.1rem;
     font-weight: 400;
 }
-main > .graph > article > p {
+p {
     font-weight: 300;
     font-size: 12px;
 }
+main > #spending {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+main > #spending.visible {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+main > #types {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+main > #types.visible {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+main > #changes {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+main > #changes.visible {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+main > #department {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+main > #department.visible {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+@media screen and ( max-width: 800px ) {
+    body {
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+    h1 {
+        font-size: 1rem;
+        text-align: center;
+    }
+    hr {
+        margin-top: 2vh;
+    }
+    figure {
+        height: 70vh;
+    }
+    main > #spending {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+    main > #types {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+    main > #changes {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+    main > #department {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+    main > .category {
+        display: none;
+    }
+    article {
+        padding-bottom: 15vh;
+    }
+    h3 {
+        text-align: center;
+        padding-top: 5vh;
+    }
+    .infos {
+        grid-template-columns: none;
+    }
+
+    
+    
+} 
