@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link rel="stylesheet" href="all_spending.css">
+    <link rel="dataCPI" href="dataCPI.csv"
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"></script><!-- chart.js -->
+    <script src="d3.min.js"></script>
+    <header>
+        <h1>
+            Economic and Inflation data from every country in the list
+        </h1>
+    </header>
+    <main>
+        <hr>
+        <section class="category">
+            <div id="spending">Pays</div>
+            <div id="types">Consumer Price</div>
+            <div id="changes">Salary index</div>
+            <div id="department">Total Reserve</div>
+        </section>
+
+<!-- CountryList en button -->
+
+    <div class="testButton">
+
+
+        <button id="0"  onClick="countryUserClick(this.id)" type="button">
+            Sri Lanka
+        </button>
+        <button id="1" onClick="countryUserClick(this.id)" type="button">
+            Israel
+        </button>
+        <button id="2" onClick="countryUserClick(this.id)" type="button">
+            Poland
+        </button>
+        <button id="3"  onClick="countryUserClick(this.id)" type="button">
+            Hungary
+        </button>
+        <button id="4" onClick="countryUserClick(this.id)" type="button">
+            Yugoslavia
+        </button>
+        <button id="5" onClick="countryUserClick(this.id)" type="button">
+            Austria
+        </button>
+        <button id="6"  onClick="countryUserClick(this.id)" type="button">
+            Sweden
+        </button>
+        <button id="7" onClick="countryUserClick(this.id)" type="button">
+            Japan
+        </button>
+        <button id="8" onClick="countryUserClick(this.id)" type="button">
+            Mexico
+        </button>
+        <button id="9"  onClick="countryUserClick(this.id)" type="button">
+            Bosnia
+        </button>
+        <button id="10" onClick="countryUserClick(this.id)" type="button">
+            Dominican Rep
+        </button>
+        <button id="11" onClick="countryUserClick(this.id)" type="button">
+            Iceland
+        </button>
+        <button id="12"  onClick="countryUserClick(this.id)" type="button">
+            Argentina
+        </button>
+        <button id="13" onClick="countryUserClick(this.id)" type="button">
+            Macedonia
+        </button>
+        <button id="14" onClick="countryUserClick(this.id)" type="button">
+            Romania
+        </button>
+        <button id="15"  onClick="countryUserClick(this.id)" type="button">
+            France
+        </button>
+        <button id="16" onClick="countryUserClick(this.id)" type="button">
+            Italy
+        </button>
+        <button id="17" onClick="countryUserClick(this.id)" type="button">
+            Netherland
+        </button>
+        <button id="18"  onClick="countryUserClick(this.id)" type="button">
+            Chile
+        </button>
+        <button id="19" onClick="countryUserClick(this.id)" type="button">
+            Kyrgystan
+        </button>
+        <button id="20" onClick="countryUserClick(this.id)" type="button">
+            Bengladesh
+        </button>
+        <button id="21"  onClick="countryUserClick(this.id)" type="button">
+            Venezuela
+        </button>
+        <button id="22" onClick="countryUserClick(this.id)" type="button">
+            Espagne
+        </button>
+        <button id="23" onClick="countryUserClick(this.id)" type="button">
+            Costa-Rica
+        </button>
+        <button id="24"  onClick="countryUserClick(this.id)" type="button">
+            Hungary
+        </button>
+        <button id="25" onClick="countryUserClick(this.id)" type="button">
+            Korea
+        </button>
+        <button id="26" onClick="countryUserClick(this.id)" type="button">
+            Croatie
+        </button>
+        <button id="27" onClick="countryUserClick(this.id)" type="button">
+            Latvia
+        </button>
+    </div>
+    <br><br><br>
+
+
+        <article>
+            <h2>Données du pays :</h2>
+        </article>
+        <br>
+        <!-- chart canvas -->
+        <section class="graph">
+            <figure>
+                <canvas id="chart1" width="371" height="495" style="display: block; box-sizing: border-box;"></canvas>
+                <figcaption>Données provenant du Fond Monétaire International (chart: 1)</figcaption><!-- the description -->          
+            </figure>
+            <article>
+                <br><br>
+                <h3>Consumer Price index</h3>
+                <br><br><br>
+                <p>Ce graphique représente l'évolution des prix moyen des produits les plus consommés, dans le pays séléctioné, en pourcentage entre 1920 et aujourd'hui.
+                    C'est une manière de représenter l'Inflation.
+                </p>
+            </article>
+        </section>
+        <br><br>
+        <section class="graph">
+            <figure>
+                <canvas id="chart2" width="371" height="495" style="display: block; box-sizing: border-box;"></canvas>
+                <figcaption>Données provenant du Fond Monétaire International (chart: 2)</figcaption><!-- the description -->          
+            </figure>
+            <article>
+                <br><br>
+                <h3>Index des salaires</h3>
+                <br><br><br>
+                <p>Ce graphique représente l'évolution du revenu moyen dans le pays séléctioné, en pourcentage entre 1920 et aujourd'hui.
+                </p>
+            </article>
+        </section>
+        <br><br>
+        <section class="graph">
+            <figure>
+                <canvas id="chart3" width="371" height="495" style="display: block; box-sizing: border-box;"></canvas>
+                <figcaption>Données provenant du Fond Monétaire International (chart: 3)</figcaption><!-- the description -->          
+            </figure>
+            <article>
+                <br><br>
+                <h3>Total Reserve in USD</h3>
+                <br><br><br>
+                <p>Ce graphique représente la réserve totale d'actifs financiers du pays. Entre 1920 et aujourd'hui.
+                    Cette dernière est convertie en US dollars.
+                </p>
+            </article>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- footer ??? -->
+
+    </main>
+    <script src = "main.js"></script>
+</body>
+</html>
